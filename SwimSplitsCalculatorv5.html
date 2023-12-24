@@ -1,0 +1,89 @@
+<html>
+	<head>
+		<!--Title for Browser Tab -->
+		<title>Swim Splits Calculator v5</title>
+		<link rel="stylesheet" type="text/css" href="source/SwimSplitsCalculator.css">
+		
+		
+	</head>
+	<body>
+		<div id="container">
+			<h1 align="center">Swim Splits Calculator (Updated Dec 2023)</h1>
+			<div id="graph_legend">
+
+			</div>
+			<div id="save_load_menu">
+				<input type='file' accept='text/plain' onchange='openFile(event)'>
+				<div id="save_button_container"></div>
+			</div>
+			<canvas id="main_graph" width="800px" height="400px"></canvas>
+			<div id="graph" class="aGraph" style="position:absolute;top:80px;left:0; float:left;"></div>
+			<div id="input_section_main" style="text-align: center; border: 1px solid grey; padding: 3px;">
+				<table border="0" style="text-align: center; margin: auto;">
+					<tr><td>First Name</td><td>  </td><td>Last Name</td></tr>
+					<tr><td><input id="first_name" size="10"></td><td>   </td><td><input id="last_name" size="10"></td></tr>
+				</table>
+				<hr>
+				
+        
+				<table border="0" style="text-align: center; margin: auto;">
+					<tr><td>Year</td><td>   </td><td>Month</td><td>   </td><td>Day</td><td>    </td><td>Time</td></tr>
+					
+					<tr>
+						<td><input id="year" size="3"></td>
+						<td>   </td>
+						<td><input id="month" size="2"></td>
+						<td>   </td>
+						<td><input id="day" size="2"></td>
+						<td>   </td>
+						<td>
+							<select id="time" size="1">
+								<option value="0">--</option>
+								<option value="1">Prelims</option>
+								<option value="2">Semi-Finals</option>
+								<option value="3">Finals</option>
+								
+							</select>
+						</td>
+					</tr>
+				</table>
+        
+        
+				<hr>
+				<select id="distance_selector">
+					<option value="0">Distance</option>
+				</select>
+				<select id="stroke">
+					<option value="0">Stroke</option>
+					<option value="fly">Fly</option>
+					<option value="back">Back</option>
+					<option value="breast">Breast</option>
+					<option value="free">Free</option>
+					<option value="im">IM</option>
+				</select>
+				<br>
+				<input type="radio" name="gender" id="male"> Men <input type="radio" name="gender" id="female"> Women<br>
+				<hr>
+				<div id="input_section">
+					<table border="0" style="text-align: center; margin: auto;">
+						<tr> <td>Top5 File</td> <td>Labels</td> <td><button onclick="draw()">Compute and Graph</button></td> </tr>
+						<tr> <td><input id="loaded_top5_file" size="10" readonly></td> <td><input id="labels_checkbox" type="checkbox" checked="checked" onchange="update_checkbox()"></td> <td></td> </tr> 
+					</table>
+					<!-- <tr><td>Loaded Top5 File</td></tr><br>
+					<tr><td><input id="loaded_top5_file" size="10"></td></tr>
+					<button onclick="draw()">Compute and Graph</button> -->
+				</div>
+			</div>
+			<br>
+		</div>
+		
+		
+		
+	</body>
+
+	<script src="source/d3.v2.js"></script>
+	<script src="source/SwimSplitsCalculatorv2.js"></script>
+
+	
+</html>
+

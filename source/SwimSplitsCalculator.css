@@ -1,0 +1,108 @@
+.column_part {
+	display: inline-block;
+	width: 23%;
+}
+
+
+/* Style for the container that holds all sections of the split calculator */
+#container {
+	border: 3px solid black;
+	width: 1250px;
+	margin: auto;
+	position: relative;
+}
+
+/* Style for the graph section of the calculator  */
+#main_graph 
+{
+	border: 1px solid white;
+	display: inline-block;
+	vertical-align: top;
+}
+
+/* Style for the inputting of athlete splits section of the calculator */
+#input_section_main
+{
+	border: 1px solid white;
+	display: inline-block;
+  vertical-align: top;
+	text-align: top;
+}
+#input_section
+{
+	vertical-align: top;
+	text-align: top;			
+}
+#input_section_lower
+{
+	vertical-align: top;
+	text-align: top;			
+}
+#distance_selector {
+	vertical-align: top;
+	margin-bottom: 20px;
+}
+
+/* NOT A COLUMN, ACTUALLY */
+.column {
+	display: inline-block;
+	vertical-align: top;
+	margin: 10px;
+}
+
+#graph_legend {
+	text-align: left;
+	position: absolute;
+	left: 5px;
+	top: 15px;
+}
+
+h5 {
+	line-height: 1px; 
+}
+
+#save_load_menu {
+	text-align: right;
+	position: absolute;
+	right: 5px;
+	top: 5px;
+}
+
+#input_total {
+	display: inline-block;
+}
+#potential_total {
+	display: inline-block;
+}
+
+
+/* D3 stuff */
+path {
+	stroke-width: 1;
+	fill: none;
+}
+
+.axis {
+  shape-rendering: crispEdges;
+}
+
+.x.axis line {
+  stroke: lightgrey;
+}
+
+.x.axis .minor {
+  stroke-opacity: .5;
+}
+
+.x.axis path {
+  display: none;
+}
+
+.y.axis line, .y.axis path {
+  fill: none;
+  stroke: #000;
+}
+
+#graph {
+	border: 0px;
+}
