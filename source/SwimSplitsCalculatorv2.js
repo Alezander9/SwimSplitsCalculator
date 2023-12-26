@@ -799,6 +799,32 @@ function selectDistance() {
 /* Scale just the optimal splits to reach the goal time*/
 function set_goal_time()
 {
+	// Check that a stroke and gender have been selected first
+	if(document.getElementById("stroke").value == 0)
+	{
+		alert("Please select a stroke!");
+		return;
+	}
+	if( !(document.getElementById("female").checked || document.getElementById("male").checked) )
+	{
+		alert("Please select a gender!");
+		return;
+	}
+	// Fill out splits and graph if necessary
+	var haveSplits = true;
+	for(var dist=50;dist<=swim_distance;dist+=50) {
+		var thisTime = document.getElementById("input"+dist);
+		if (thisTime.value.trim() == "")
+		{
+			thisTime.value = 30.0;
+			haveSplits = false;
+		}
+	  }
+	if (!haveSplits)
+	{
+		draw();
+	}
+
   var goal_time = document.getElementById("goal_time").value;
   // Convert time to seconds if necessary
   thisTimeParts = goal_time.split(":");
